@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS styles -->
+		<title>Employee Leaves</title>
+		<link href="lib/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="lib/nav-bar.css" rel="stylesheet"> -->
+		<link href="css/common.css" rel="stylesheet">
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/dist/js/bootstrap.min.js"></script>
+		<script src="lib/moment.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/employee-leave-page.js"></script>
+	</head>
+	
+	<body onload="onLoad()">
+		<br><br>
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								Employee name: <span id="currentLoginEmployeeName"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<button type="reset" class="btn btn-success" onclick="logout()" style="padding: 11px 32px;">Logout</button>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<span id="approvedLeavesDiv"></span>
+								<br><strong>Approved Leaves</strong>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel redColor">
+							<div class="panel-heading">
+								<span id="pendingLeavesDiv"></span>
+								<br><strong>Pending Leaves</strong>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel greenColor">
+							<div class="panel-heading">
+								<span id="remainingLeavesDiv"></span>
+								<br><strong>Remaining Leaves</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								HOLIDAYS LIST
+							</div>
+							<div id="holidayListDiv">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								Apply Leave
+							</div>
+						</div>
+						<form>
+							<div class="row">
+								<div class="col-md-3" style="text-align: right;">
+									<b>Date Range</b>
+								</div>
+								<div class="col-md-4">
+									<div class="input-append date" data-date-format="dd-mm-yyyy">
+										<input type="date" id="fromDate" name="fromDate" >
+										<span class="add-on"><i class="icon-th"></i></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="input-append date"  data-date-format="dd-mm-yyyy">
+										<input type="date" id="toDate" name="toDate" >
+										<span class="add-on"><i class="icon-th"></i></span>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-3" style="text-align: right;">
+									<b>Reason</b>
+								</div>
+								<div class="col-md-9" style="text-align: right;">
+									<input type="text" class="form-control" name="leaveReason" id="leaveReason">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12" style="text-align: right;">
+									<button type="button" class="btn btn-success" onclick="applyLeave()">Apply</button>
+									<button type="reset" class="btn btn-success">Clear</button>
+								</div>
+							</div>
+						
+							<br>
+							<div class="panel panel-default" style="display:none;" id="showDataTableDiv">
+								<div class="panel-body">
+									<div class="table-responsive" id="printTableDiv">
+										<!-- Here table will dynamically print from admin-add-holidays.js script -->
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

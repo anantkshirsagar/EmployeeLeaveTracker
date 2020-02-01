@@ -1,0 +1,43 @@
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.side-nav-bg-color {
+	background-color:#000000;
+}
+
+.side-nav-font-color {
+	color: #FFFFFF;
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.align-top {
+	vertical-align: top;
+}
+
+.align-botton {
+	vertical-align: bottom;
+}
+
+.headerFont {
+	font-size: 25px;
+}
+
+.blueColor {
+	background-color: #5CA0DB;
+}
+.redColor {
+	background-color: #FF8585;
+}
+.greenColor {
+	background-color: #74C45D;
+}
+
+.redColor {
+	color : #ff0000 
+}

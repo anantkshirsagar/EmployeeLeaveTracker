@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS styles -->
+		<title>Employee Leaves</title>
+		<link href="lib/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="lib/nav-bar.css" rel="stylesheet"> -->
+		<link href="css/common.css" rel="stylesheet">
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/dist/js/bootstrap.min.js"></script>
+		<script src="lib/moment.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/manager-approve-leaves.js"></script>
+	</head>
+	
+	<body onload="onLoad()">
+		<br><br>
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								Employee name: <span id="currentLoginEmployeeName"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<button type="reset" class="btn btn-success" onclick="logout()" style="padding: 11px 32px;">Logout</button>
+					</div>
+				</div>
+				
+				<ul class="nav nav-tabs">
+					<li role="presentation"><a href="manager-leave-page.html">Apply Leaves</a></li>
+					<li role="presentation" class="active"><a href="manager-approve-leaves.html">Approve Leaves</a></li>
+				</ul>
+				<br>
+				
+				<div class="panel panel-default" style="display:none;" id="showDataTableDiv">
+					<div class="panel-body">
+						<div class="table-responsive" id="printTableDiv">
+							<!-- Here table will dynamically print from admin-add-holidays.js script -->
+						</div>
+					</div>
+				</div>
+				
+				<div class="modal fade" id="managerLeaveRecordDialog" role="dialog" >
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Leave Record of employee</h4>
+							</div>
+							<div class="modal-body">
+								<div class="panel panel-default">
+									<div class="panel-body" id="showLeaveDataTableDiv">
+										<div class="table-responsive" id="employeeLeaveRecordPrintTableDiv">
+											<!-- Here table will dynamically print from admin-add-holidays.js script -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
