@@ -37,7 +37,7 @@ public class EmployeeService extends AbstractDBService {
 		prepareStatement.setInt(6, 0);
 		prepareStatement.setInt(7, 0);
 		prepareStatement.setInt(8, currentYearRecord.getTotalLeaves());
-		prepareStatement.setBoolean(8, false);
+		prepareStatement.setBoolean(9, false);
 		LOG.debug("Query {}", prepareStatement);
 		LOG.debug("Entry to holiday_record {}", prepareStatement.executeUpdate());
 		connectionSettings.closeConnection();
